@@ -6,33 +6,63 @@
   <title>Countdown Timer</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       text-align: center;
-      margin-top: 100px;
-      background-color: #f0f8ff; /* Light blue background */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Soft pink-orange gradient */
       color: #333;
     }
-    .timer {
-      font-size: 48px;
-      color: #2c3e50; /* Darker text color */
+    
+    h1 {
+      font-size: 36px;
       margin-bottom: 20px;
+      color: #2c3e50;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
     }
+    
+    .timer {
+      font-size: 60px;
+      color: #34495e; /* Deep blue-gray text color */
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .timer:hover {
+      transform: scale(1.05); /* Slight enlargement on hover */
+    }
+
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 5px;
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
       border: none;
-      border-radius: 5px;
-      background-color: #3498db; /* Button background color */
-      color: white; /* Button text color */
+      border-radius: 25px;
+      background-color: #ff6b6b; /* Soft coral button color */
+      color: white;
       cursor: pointer;
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
     }
+
     button:hover {
-      background-color: #2980b9; /* Darker button color on hover */
+      background-color: #e55050; /* Darker coral on hover */
+      transform: scale(1.1); /* Slightly larger scale on hover */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
+
     button:active {
-      background-color: #1c5986; /* Even darker color on click */
+      background-color: #c43d3d; /* Even darker color on click */
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -55,6 +85,7 @@
         time--;
         if (time < 0) {
           clearInterval(timer);
+          timer = null;
           alert('Time is up!');
         }
       }, 1000);

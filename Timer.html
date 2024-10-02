@@ -68,9 +68,12 @@
 </head>
 <body>
   <h1>Countdown Timer</h1>
+  <input type="number" id="customTime" placeholder="Enter minutes" min="1" />
+  <button onclick="setCustomTime()">Set Time</button>
   <div class="timer" id="timer">10:00</div>
   <button onclick="startTimer()">Start Timer</button>
   <button onclick="stopTimer()">Stop Timer</button>
+  <button onclick="resetTimer()">Reset Timer</button>
 
   <script>
     let time = 600; // 10 minutes in seconds
@@ -94,6 +97,19 @@
     function stopTimer() {
       clearInterval(timer);
       timer = null; // reset timer to allow restarting
+    }
+
+    function resetTimer() {
+      clearInterval(timer); 
+      timer = null; 
+      time = 600; 
+      document.getElementById('timer').textContent = '10:00'; 
+    }
+
+    function setCustomTime() {
+      const input = document.getElementById('customTime').value;
+      time = input * 60; // Convert minutes to seconds
+      document.getElementById('timer').textContent = `${Math.floor(time / 60)}:00`; // Update timer display
     }
   </script>
 </body>

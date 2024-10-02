@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f8ff; /* Light blue background */
+      color: #333;
+    }
+    .timer {
+      font-size: 48px;
+      color: #2c3e50; /* Darker text color */
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db; /* Button background color */
+      color: white; /* Button text color */
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9; /* Darker button color on hover */
+    }
+    button:active {
+      background-color: #1c5986; /* Even darker color on click */
+    }
+  </style>
+</head>
+<body>
+  <h1>Countdown Timer</h1>
+  <div class="timer" id="timer">10:00</div>
+  <button onclick="startTimer()">Start Timer</button>
+  <button onclick="stopTimer()">Stop Timer</button>
+
+  <script>
+    let time = 600; // 10 minutes in seconds
+    let timer;
+
+    function startTimer() {
+      if (timer) return; // prevent multiple timers
+      timer = setInterval(function() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        time--;
+        if (time < 0) {
+          clearInterval(timer);
+          alert('Time is up!');
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+      timer = null; // reset timer to allow restarting
+    }
+  </script>
+</body>
+</html>

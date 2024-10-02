@@ -14,55 +14,56 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Soft pink-orange gradient */
-      color: #333;
+      background: radial-gradient(circle, #ffafbd, #ffc3a0); /* Radial gradient for depth */
+      color: #2c3e50; /* Darker shade for better contrast */
     }
     
     h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #2c3e50;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+      font-size: 42px;
+      margin-bottom: 30px;
+      color: #34495e; /* Deep blue-gray color */
+      text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15); /* Enhanced text shadow for depth */
     }
     
     .timer {
-      font-size: 60px;
-      color: #34495e; /* Deep blue-gray text color */
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
+      font-size: 72px; /* Increased font size for better emphasis */
+      color: #34495e; 
+      margin-bottom: 40px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.3); /* Light, semi-transparent background for contrast */
+      border-radius: 20px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     .timer:hover {
-      transform: scale(1.05); /* Slight enlargement on hover */
+      transform: scale(1.07); /* Enlarges slightly on hover */
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
     }
 
     button {
-      padding: 15px 30px;
-      font-size: 18px;
-      margin: 10px;
+      padding: 15px 35px;
+      font-size: 20px; /* Enhanced font size */
+      margin: 15px;
       border: none;
-      border-radius: 25px;
-      background-color: #ff6b6b; /* Soft coral button color */
-      color: white;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff6b6b, #f06595); /* Gradient for depth effect */
+      color: #fff;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.2s ease, box-shadow 0.3s;
     }
 
     button:hover {
-      background-color: #e55050; /* Darker coral on hover */
-      transform: scale(1.1); /* Slightly larger scale on hover */
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #e55050, #dc5a77); /* Darker gradient on hover */
+      transform: scale(1.1); /* Enlarges on hover */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
     }
 
     button:active {
-      background-color: #c43d3d; /* Even darker color on click */
+      background: linear-gradient(135deg, #c43d3d, #b84b61); /* Darker color on click */
       transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
